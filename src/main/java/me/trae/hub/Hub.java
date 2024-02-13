@@ -11,6 +11,7 @@ import me.trae.core.network.NetworkManager;
 import me.trae.core.player.PlayerManager;
 import me.trae.core.recharge.RechargeManager;
 import me.trae.core.redis.RedisManager;
+import me.trae.core.scoreboard.ScoreboardManager;
 import me.trae.core.server.ServerManager;
 import me.trae.core.updater.UpdaterManager;
 import me.trae.core.world.WorldManager;
@@ -31,6 +32,7 @@ public class Hub extends SpigotPlugin {
         addManager(new PlayerManager(this));
         addManager(new RechargeManager(this));
         addManager(new RedisManager(this));
+        addManager(new ScoreboardManager(this));
         addManager(new ServerManager(this));
         addManager(new UpdaterManager(this));
         addManager(new WorldManager(this));
