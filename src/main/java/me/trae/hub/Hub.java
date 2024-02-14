@@ -18,8 +18,8 @@ import me.trae.core.redis.RedisManager;
 import me.trae.core.scoreboard.ScoreboardManager;
 import me.trae.core.server.ServerManager;
 import me.trae.core.updater.UpdaterManager;
-import me.trae.core.world.WorldManager;
 import me.trae.framework.shared.utility.enums.ChatColor;
+import me.trae.hub.world.WorldManager;
 
 public class Hub extends SpigotPlugin {
 
@@ -43,6 +43,8 @@ public class Hub extends SpigotPlugin {
         addManager(new ScoreboardManager(this));
         addManager(new ServerManager(this));
         addManager(new UpdaterManager(this));
+
+        // Hub
         addManager(new WorldManager(this));
     }
 }
