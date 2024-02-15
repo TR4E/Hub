@@ -7,7 +7,6 @@ import me.trae.core.config.ConfigManager;
 import me.trae.core.countdown.CountdownManager;
 import me.trae.core.database.DatabaseManager;
 import me.trae.core.death.DeathManager;
-import me.trae.core.energy.EnergyManager;
 import me.trae.core.framework.SpigotPlugin;
 import me.trae.core.item.ItemManager;
 import me.trae.core.menu.MenuManager;
@@ -19,6 +18,7 @@ import me.trae.core.scoreboard.ScoreboardManager;
 import me.trae.core.server.ServerManager;
 import me.trae.core.updater.UpdaterManager;
 import me.trae.framework.shared.utility.enums.ChatColor;
+import me.trae.hub.navigator.NavigatorManager;
 import me.trae.hub.world.WorldManager;
 
 public class Hub extends SpigotPlugin {
@@ -33,7 +33,6 @@ public class Hub extends SpigotPlugin {
         addManager(new CountdownManager(this));
         addManager(new DatabaseManager(this));
         addManager(new DeathManager(this));
-        addManager(new EnergyManager(this));
         addManager(new ItemManager(this, ChatColor.GREEN));
         addManager(new MenuManager(this));
         addManager(new NetworkManager(this));
@@ -45,6 +44,7 @@ public class Hub extends SpigotPlugin {
         addManager(new UpdaterManager(this));
 
         // Hub
+        addManager(new NavigatorManager(this));
         addManager(new WorldManager(this));
     }
 }
