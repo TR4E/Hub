@@ -3,9 +3,7 @@ package me.trae.hub.world;
 import me.trae.core.framework.SpigotPlugin;
 import me.trae.core.world.modules.DisableSaturation;
 import me.trae.core.world.modules.DisableWeather;
-import me.trae.hub.world.modules.DisableInventoryInteract;
-import me.trae.hub.world.modules.DisablePlayerDropItem;
-import me.trae.hub.world.modules.DisablePlayerPickupItem;
+import me.trae.hub.world.modules.*;
 
 public class WorldManager extends me.trae.core.world.WorldManager {
 
@@ -22,6 +20,8 @@ public class WorldManager extends me.trae.core.world.WorldManager {
         addModule(new DisableWeather(this));
 
         // Hub
+        addModule(new DisableBlockInteraction(this));
+        addModule(new DisableEntityDamage(this));
         addModule(new DisableInventoryInteract(this));
         addModule(new DisablePlayerDropItem(this));
         addModule(new DisablePlayerPickupItem(this));
