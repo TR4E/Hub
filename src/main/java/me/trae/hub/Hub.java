@@ -19,6 +19,7 @@ import me.trae.core.server.ServerManager;
 import me.trae.core.updater.UpdaterManager;
 import me.trae.framework.shared.utility.enums.ChatColor;
 import me.trae.hub.navigator.NavigatorManager;
+import me.trae.hub.recipe.RecipeManager;
 import me.trae.hub.world.WorldManager;
 
 public class Hub extends SpigotPlugin {
@@ -45,6 +46,7 @@ public class Hub extends SpigotPlugin {
 
         // Hub
         addManager(new NavigatorManager(this));
+        addManager(new RecipeManager(this));
         addManager(new WorldManager(this));
     }
 }
