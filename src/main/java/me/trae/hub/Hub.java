@@ -8,6 +8,7 @@ import me.trae.core.countdown.CountdownManager;
 import me.trae.core.damage.DamageManager;
 import me.trae.core.database.DatabaseManager;
 import me.trae.core.death.DeathManager;
+import me.trae.core.effect.EffectManager;
 import me.trae.core.framework.SpigotPlugin;
 import me.trae.core.item.ItemManager;
 import me.trae.core.menu.MenuManager;
@@ -36,6 +37,7 @@ public class Hub extends SpigotPlugin {
         addManager(new DamageManager(this));
         addManager(new DatabaseManager(this));
         addManager(new DeathManager(this));
+        addManager(new EffectManager(this));
         addManager(new ItemManager(this, ChatColor.GREEN));
         addManager(new MenuManager(this));
         addManager(new NetworkManager(this));
