@@ -10,6 +10,7 @@ import me.trae.core.database.DatabaseManager;
 import me.trae.core.death.DeathManager;
 import me.trae.core.effect.EffectManager;
 import me.trae.core.framework.SpigotPlugin;
+import me.trae.core.gamer.GlobalGamerManager;
 import me.trae.core.item.ItemManager;
 import me.trae.core.menu.MenuManager;
 import me.trae.core.network.NetworkManager;
@@ -20,6 +21,7 @@ import me.trae.core.scoreboard.ScoreboardManager;
 import me.trae.core.server.ServerManager;
 import me.trae.core.updater.UpdaterManager;
 import me.trae.framework.shared.utility.enums.ChatColor;
+import me.trae.hub.gamer.GamerManager;
 import me.trae.hub.navigator.NavigatorManager;
 import me.trae.hub.recipe.RecipeManager;
 import me.trae.hub.world.WorldManager;
@@ -38,6 +40,7 @@ public class Hub extends SpigotPlugin {
         addManager(new DatabaseManager(this));
         addManager(new DeathManager(this));
         addManager(new EffectManager(this));
+        addManager(new GlobalGamerManager(this));
         addManager(new ItemManager(this, ChatColor.GREEN));
         addManager(new MenuManager(this));
         addManager(new NetworkManager(this));
@@ -49,6 +52,7 @@ public class Hub extends SpigotPlugin {
         addManager(new UpdaterManager(this));
 
         // Hub
+        addManager(new GamerManager(this));
         addManager(new NavigatorManager(this));
         addManager(new RecipeManager(this));
         addManager(new WorldManager(this));
