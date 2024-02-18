@@ -48,7 +48,7 @@ public abstract class ServerButton extends Button<ServerMenu> implements IServer
             return;
         }
 
-        this.getInstance().getManagerByClass(NetworkManager.class).getModuleByClass(ConnectPlayer.class).send(player, this.getServerType());
+        this.getInstance().getManagerByClass(NetworkManager.class).getModuleByClass(ConnectPlayer.class).execute(player, this.getServerType());
     }
 
     private boolean canConnect(final Player player, final Client client) {

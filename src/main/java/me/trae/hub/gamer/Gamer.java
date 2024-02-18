@@ -1,6 +1,6 @@
 package me.trae.hub.gamer;
 
-import me.trae.framework.shared.gamer.types.LocalGamer;
+import me.trae.framework.shared.gamer.local.types.LocalGamer;
 
 import java.util.UUID;
 

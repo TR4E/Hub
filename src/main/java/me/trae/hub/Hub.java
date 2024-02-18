@@ -10,7 +10,7 @@ import me.trae.core.database.DatabaseManager;
 import me.trae.core.death.DeathManager;
 import me.trae.core.effect.EffectManager;
 import me.trae.core.framework.SpigotPlugin;
-import me.trae.core.gamer.GlobalGamerManager;
+import me.trae.core.gamer.global.GlobalGamerManager;
 import me.trae.core.item.ItemManager;
 import me.trae.core.menu.MenuManager;
 import me.trae.core.network.NetworkManager;
