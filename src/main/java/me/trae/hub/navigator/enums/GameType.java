@@ -9,21 +9,16 @@ public enum GameType implements IGameType {
 
     CLANS(
             "Clans",
-            10,
+            11,
             ChatColor.RED,
             new ItemStack(Material.TNT),
-            "Team PvP",
+            "Factions Survival",
             new String[]{
-                    "Hide, Fight, Win.",
+                    "Hide. Fight. War. Win",
                     "",
-                    "Create alliances as you battle your way",
-                    "into the world of clans.",
-                    "",
-                    "Get your claim down quick in an",
-                    "isolated place where no one can find you,",
-                    "watch your back and defend your claims.",
-                    "",
-                    "PvP is the core of this game mode - not for the weak."
+                    "Fight in this medieval land with Champions classes to",
+                    "take over as much territory as you can, and besiege",
+                    "as many Clans as you can before they destroy you."
             }
     );
 
