@@ -9,9 +9,7 @@ import me.trae.framework.shared.client.enums.Rank;
 import me.trae.framework.shared.network.data.PlayerData;
 import me.trae.framework.shared.network.data.ServerData;
 import me.trae.framework.shared.utility.UtilFormat;
-import me.trae.framework.shared.utility.enums.ChatColor;
 import me.trae.hub.navigator.menus.interfaces.IServerButton;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
@@ -35,10 +33,10 @@ public abstract class ServerButton extends Button<ServerMenu> implements IServer
     public String[] getLore() {
         final List<String> lore = new ArrayList<>();
 
-        lore.add(ChatColor.DARK_GRAY + this.getGameType().getType());
+        lore.add(String.format("<dark_gray>%s", this.getGameType().getType()));
         lore.add(" ");
 
-        Arrays.asList(this.getGameType().getDescription()).forEach(line -> lore.add(ChatColor.setDefault(line, ChatColor.GRAY)));
+        Arrays.asList(this.getGameType().getDescription()).forEach(line -> lore.add(String.format("<gray>%s", line)));
         lore.add(" ");
 
         final ServerData serverData = this.getServerData();
@@ -51,7 +49,7 @@ public abstract class ServerButton extends Button<ServerMenu> implements IServer
         lore.add(UtilFormat.pairString("Status", this.getServerStatus()));
         lore.add(" ");
 
-        final Player player = Bukkit.getPlayer(this.getMenu().getUUID());
+        final Player player = this.getMenu().getPlayer();
 
         if (this.canConnect(player, this.getInstance().getManagerByClass(ClientManager.class).getClientByPlayer(player))) {
             lore.add("<yellow>Click to Connect!</yellow>");
