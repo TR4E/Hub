@@ -2,6 +2,7 @@ package me.trae.hub.navigator.menus;
 
 import me.trae.core.client.Client;
 import me.trae.core.menu.Menu;
+import me.trae.core.network.NetworkManager;
 import me.trae.framework.shared.utility.enums.ServerType;
 import me.trae.hub.navigator.NavigatorManager;
 import me.trae.hub.navigator.enums.GameType;
@@ -15,6 +16,8 @@ public class ServerMenu extends Menu<NavigatorManager> {
 
     @Override
     public void fillPage(final Player player, final Client client) {
+        final NetworkManager networkManager = this.getInstance().getManagerByClass(NetworkManager.class);
+
         for (final GameType gameType : GameType.values()) {
             final ServerType serverType = ServerType.getByName(gameType.name());
             if (serverType == null) {
@@ -22,6 +25,11 @@ public class ServerMenu extends Menu<NavigatorManager> {
             }
 
             addButton(new ServerButton(this, gameType.getSlot(), gameType.getItemStack()) {
+                @Override
+                public NetworkManager getNetworkManager() {
+                    return networkManager;
+                }
+
                 @Override
                 public ServerType getServerType() {
                     return serverType;
@@ -33,5 +41,10 @@ public class ServerMenu extends Menu<NavigatorManager> {
                 }
             });
         }
+    }
+
+    @Override
+    public long getRefreshDelay() {
+        return 3000L;
     }
 }
