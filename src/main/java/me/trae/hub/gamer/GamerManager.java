@@ -2,10 +2,12 @@ package me.trae.hub.gamer;
 
 import me.trae.core.framework.SpigotPlugin;
 import me.trae.core.gamer.local.LocalGamerManager;
+import me.trae.framework.shared.utility.objects.EnumData;
+import me.trae.hub.gamer.enums.GamerProperty;
 
 import java.util.UUID;
 
-public class GamerManager extends LocalGamerManager<Gamer> {
+public class GamerManager extends LocalGamerManager<Gamer, GamerProperty, GamerRepository> {
 
     public GamerManager(final SpigotPlugin instance) {
         super(instance);
@@ -17,7 +19,17 @@ public class GamerManager extends LocalGamerManager<Gamer> {
     }
 
     @Override
-    public Gamer createGamer(final UUID uuid) {
+    public Class<GamerRepository> getClassOfRepository() {
+        return GamerRepository.class;
+    }
+
+    @Override
+    public Gamer createGamerByUUID(final UUID uuid) {
         return new Gamer(uuid);
+    }
+
+    @Override
+    public Gamer createGamerByData(EnumData<GamerProperty> data) {
+        return new Gamer(data);
     }
 }
