@@ -35,6 +35,8 @@ public class HandleNavigatorFunction extends SpigotListener<NavigatorManager> {
         UtilEntity.clearInventory(player);
 
         player.getInventory().setItem(4, this.getItemBuilder().toItemStack());
+
+        player.updateInventory();
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
