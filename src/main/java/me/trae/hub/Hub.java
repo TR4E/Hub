@@ -1,5 +1,6 @@
 package me.trae.hub;
 
+import me.trae.core.Core;
 import me.trae.core.chat.ChatManager;
 import me.trae.core.client.ClientManager;
 import me.trae.core.command.CommandManager;
@@ -23,7 +24,6 @@ import me.trae.core.redis.RedisManager;
 import me.trae.core.scoreboard.ScoreboardManager;
 import me.trae.core.server.ServerManager;
 import me.trae.core.updater.UpdaterManager;
-import me.trae.framework.shared.utility.enums.ChatColor;
 import me.trae.hub.gamer.GamerManager;
 import me.trae.hub.navigator.NavigatorManager;
 import me.trae.hub.recipe.RecipeManager;
@@ -33,34 +33,47 @@ public class Hub extends SpigotPlugin {
 
     @Override
     public void registerManagers() {
-        // Core
-        addManager(new ChatManager(this));
-        addManager(new ClientManager(this));
-        addManager(new CommandManager(this));
-        addManager(new ConfigManager(this));
-        addManager(new CountdownManager(this));
-        addManager(new DamageManager(this));
-        addManager(new DatabaseManager(this));
-        addManager(new DeathManager(this));
-        addManager(new GlobalDonationManager(this));
-        addManager(new LocalDonationManager(this));
-        addManager(new EffectManager(this));
-        addManager(new GlobalGamerManager(this));
-        addManager(new ItemManager(this, ChatColor.GREEN));
-        addManager(new MenuManager(this));
-        addManager(new NetworkManager(this));
-        addManager(new PerkManager(this));
-        addManager(new PlayerManager(this));
-        addManager(new RechargeManager(this));
-        addManager(new RedisManager(this));
-        addManager(new ScoreboardManager(this));
-        addManager(new ServerManager(this));
-        addManager(new UpdaterManager(this));
-
-        // Hub
         addManager(new GamerManager(this));
         addManager(new NavigatorManager(this));
         addManager(new RecipeManager(this));
         addManager(new WorldManager(this));
+    }
+
+    @Override
+    public void registerFactories() {
+        addFactory(new Core() {
+            @Override
+            public boolean loadOnStart() {
+                return true;
+            }
+
+            @Override
+            public void registerManagers() {
+                addManager(ChatManager.class);
+                addManager(ClientManager.class);
+                addManager(CommandManager.class);
+                addManager(ConfigManager.class);
+                addManager(CountdownManager.class);
+                addManager(DamageManager.class);
+                addManager(DatabaseManager.class);
+                addManager(DeathManager.class);
+                addManager(GlobalDonationManager.class);
+                addManager(LocalDonationManager.class);
+                addManager(EffectManager.class);
+                addManager(GlobalGamerManager.class);
+                addManager(ItemManager.class);
+                addManager(MenuManager.class);
+                addManager(NetworkManager.class);
+                addManager(PerkManager.class);
+                addManager(PlayerManager.class);
+                addManager(RechargeManager.class);
+                addManager(me.trae.core.recipe.RecipeManager.class);
+                addManager(RedisManager.class);
+                addManager(ScoreboardManager.class);
+                addManager(ServerManager.class);
+                addManager(UpdaterManager.class);
+                addManager(me.trae.core.world.WorldManager.class);
+            }
+        });
     }
 }

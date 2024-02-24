@@ -13,8 +13,6 @@ public class WorldManager extends me.trae.core.world.WorldManager {
 
     @Override
     public void registerModules() {
-        super.registerModules();
-
         // Core
         addModule(new DisableSaturation(this));
         addModule(new DisableWeather(this));
