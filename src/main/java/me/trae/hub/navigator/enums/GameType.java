@@ -20,6 +20,14 @@ public enum GameType implements IGameType {
                     "take over as much territory as you can, and besiege",
                     "as many Clans as you can before they destroy you."
             }
+    ),
+    ARCADE(
+            "Arcade",
+            13,
+            ChatColor.AQUA,
+            new ItemStack(Material.NOTE_BLOCK),
+            "Minigames",
+            new String[0]
     );
 
     private final String name;
