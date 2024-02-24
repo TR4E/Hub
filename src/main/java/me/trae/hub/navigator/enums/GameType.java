@@ -23,7 +23,7 @@ public enum GameType implements IGameType {
     ),
     ARCADE(
             "Arcade",
-            13,
+            15,
             ChatColor.AQUA,
             new ItemStack(Material.NOTE_BLOCK),
             "Minigames",
