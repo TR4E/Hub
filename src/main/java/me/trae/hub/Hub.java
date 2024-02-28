@@ -24,6 +24,7 @@ import me.trae.core.recharge.RechargeManager;
 import me.trae.core.redis.RedisManager;
 import me.trae.core.scoreboard.ScoreboardManager;
 import me.trae.core.server.ServerManager;
+import me.trae.core.teleport.TeleportManager;
 import me.trae.core.updater.UpdaterManager;
 import me.trae.hub.gamer.GamerManager;
 import me.trae.hub.navigator.NavigatorManager;
@@ -73,6 +74,7 @@ public class Hub extends SpigotPlugin {
                 addManager(RedisManager.class);
                 addManager(ScoreboardManager.class);
                 addManager(ServerManager.class);
+                addManager(TeleportManager.class);
                 addManager(UpdaterManager.class);
                 addManager(me.trae.core.world.WorldManager.class);
             }

@@ -45,6 +45,6 @@ public class ServerMenu extends Menu<NavigatorManager> {
 
     @Override
     public long getRefreshDelay() {
-        return 3000L;
+        return 1000L;
     }
 }
