@@ -1,6 +1,7 @@
 package me.trae.hub.world;
 
 import me.trae.core.framework.SpigotPlugin;
+import me.trae.core.world.modules.AlwaysAdventureMode;
 import me.trae.core.world.modules.DisableSaturation;
 import me.trae.core.world.modules.DisableWeather;
 import me.trae.hub.world.modules.*;
@@ -14,6 +15,7 @@ public class WorldManager extends me.trae.core.world.WorldManager {
     @Override
     public void registerModules() {
         // Core
+        addModule(new AlwaysAdventureMode(this));
         addModule(new DisableSaturation(this));
         addModule(new DisableWeather(this));
 
