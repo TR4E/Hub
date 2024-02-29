@@ -25,5 +25,6 @@ public class WorldManager extends me.trae.core.world.WorldManager {
         addModule(new DisableInventoryInteract(this));
         addModule(new DisablePlayerDropItem(this));
         addModule(new DisablePlayerPickupItem(this));
+        addModule(new TeleportIfFarFromSpawn(this));
     }
 }
