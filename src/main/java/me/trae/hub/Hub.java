@@ -20,6 +20,7 @@ import me.trae.core.menu.MenuManager;
 import me.trae.core.network.NetworkManager;
 import me.trae.core.perk.PerkManager;
 import me.trae.core.player.PlayerManager;
+import me.trae.core.punish.PunishManager;
 import me.trae.core.recharge.RechargeManager;
 import me.trae.core.redis.RedisManager;
 import me.trae.core.scoreboard.ScoreboardManager;
@@ -69,6 +70,7 @@ public class Hub extends SpigotPlugin {
                 addManager(NetworkManager.class);
                 addManager(PerkManager.class);
                 addManager(PlayerManager.class);
+                addManager(PunishManager.class);
                 addManager(RechargeManager.class);
                 addManager(me.trae.core.recipe.RecipeManager.class);
                 addManager(RedisManager.class);
