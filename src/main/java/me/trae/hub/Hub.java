@@ -1,6 +1,7 @@
 package me.trae.hub;
 
 import me.trae.core.Core;
+import me.trae.core.blockrestore.BlockRestoreManager;
 import me.trae.core.chat.ChatManager;
 import me.trae.core.client.ClientManager;
 import me.trae.core.command.CommandManager;
@@ -52,6 +53,7 @@ public class Hub extends SpigotPlugin {
 
             @Override
             public void registerManagers() {
+                addManager(BlockRestoreManager.class);
                 addManager(ChatManager.class);
                 addManager(ClientManager.class);
                 addManager(CommandManager.class);
